@@ -9,10 +9,13 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping
-@AllArgsConstructor
+
 public class EmailGenerator {
-    @Autowired
+
     private EmailGeneratorController emailGeneratorController;
+    public EmailGenerator(EmailGeneratorController emailGeneratorController) {
+        this.emailGeneratorController = emailGeneratorController;
+    }
     @PostMapping("/generate-mail")
     @CrossOrigin(origins = "*")
     public String generateEmail(@RequestBody EmailRequest email){
