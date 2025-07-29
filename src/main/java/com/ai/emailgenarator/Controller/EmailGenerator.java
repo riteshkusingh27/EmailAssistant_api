@@ -12,9 +12,11 @@ import org.springframework.web.bind.annotation.*;
 public class EmailGenerator {
     @Autowired
     private final EmailGeneratorService emailGeneratorService;
+
     public EmailGenerator(EmailGeneratorService emailGeneratorService) {
         this.emailGeneratorService = emailGeneratorService;
     }
+
     @PostMapping("/generate-mail")
     @CrossOrigin(origins = "*")
     public String generateEmail(@RequestBody EmailRequest email){
