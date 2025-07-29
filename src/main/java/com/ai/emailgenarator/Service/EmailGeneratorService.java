@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
-public class EmailGeneratorController {
+public class EmailGeneratorService {
         @Value("${google.gemini.apiKeY}")
        private String apiKey ;
     // service to help us call api key
